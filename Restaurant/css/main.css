@@ -1,0 +1,772 @@
+*{
+    margin:0;
+    padding:0;
+    text-decoration: none;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    
+}
+@font-face{
+    font-family: 'Bordo';
+    src:url('../fonts/BaroqueTextJF.ttf');
+}
+@font-face{
+    font-family: 'proximaNova';
+    src:url('../fonts/ProximaNova-RegularIt.ttf')
+}
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+#fakeHeader{
+    position: relative;
+    top:0;
+    left:0;
+    height:120px;
+    width: 100%;
+    transition: 1s !important;
+}
+#container{
+    position: relative;
+    width:100%;
+   
+}
+#header{
+    left:0;
+    top:0;
+    position: fixed;
+    height: 128px;
+    width:100%;
+    max-width: 100%;
+    z-index: 10000;
+    background: white !important;
+    margin-bottom: 50px;
+    border-bottom:1px solid rgba(0,0,0,0.3);
+    transition: 1s !important;
+}
+#headerContent{
+    margin: 0 auto;
+    max-width: 1212px;
+    transition: 1s;
+    
+}
+#Logo{
+    float:left;
+    margin:35px 120px 0px 105px;
+    display:block;
+    transition: 1s;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    
+}
+.LogoName{
+    font-family: 'Bordo';
+    font-size:40px;
+    color:black;
+    display: inline-block;
+    transform-style: preserve-3d;
+
+    
+}
+.rotate360 {
+    transition: transform 1s;
+    transform: rotateY(360deg);
+}
+
+#menu{
+    float:right;
+    margin-top:56px;
+    overflow: hidden;
+    min-height:50px;
+    margin-right: 100px;
+    transition: 1s;
+}
+#menu ul li{
+    display: inline-block;
+}
+#menu ul li a{
+    font-size:15px;
+    color:black;
+    font-family: 'proximaNova';
+    font-weight: bold;
+}
+#icon img {
+    display: block;
+    height:auto;
+    width:75px;
+}
+#mainSlider{
+    position: relative;
+    float:left;
+    display: block;
+    width:100%;
+    min-height: 10px;
+    
+/*    overflow: hidden;*/
+}
+#sliderContainer{
+    position: relative;
+    display:inline-block;
+    width:100%;
+    max-height:540px;
+    overflow: hidden;
+}
+
+
+#sliderContainer img{
+    max-width: 100%;
+    height: auto;
+    left:0;
+    display: inline-block;
+    position: relative;
+    
+}
+#prev{
+    display: block;
+    position: absolute;
+    top:50%;
+    left:50px;
+    background-image:url('../img/icon/x1-sprite.png');
+    background-position: 0px -567px;
+    width:52px;
+    height: 52px;
+    z-index: 1000;
+/*    opacity: 0.7;*/
+/*    background-color: rgb(128, 128, 128,0.3);*/
+/*    border-radius:40%;*/
+}
+#next{
+    display: block;
+    position: absolute;
+    top:50%;
+    right:50px;
+    background-image:url('../img/icon/x1-sprite.png');
+    background-position: 0px -513px;
+    background-size: cover;
+    width:52px;
+    height: 52px;
+    z-index: 1000;
+    
+    
+}
+.prev{
+    display: block;
+    position: absolute;
+    top:50%;
+    left:50px;
+    background-image:url('../img/icon/x1-sprite.png');
+    background-position: 0px -567px;
+    width:52px;
+    height: 52px;
+    z-index: 1000;
+/*    opacity: 0.7;*/
+/*    background-color: rgb(128, 128, 128,0.3);*/
+/*    border-radius:40%;*/
+}
+.next{
+    display: block;
+    position: absolute;
+    top:50%;
+    right:50px;
+    background-image:url('../img/icon/x1-sprite.png');
+    background-position: 0px -513px;
+    background-size: cover;
+    width:52px;
+    height: 52px;
+    z-index: 1000;
+    
+    
+}
+.sliderButtons{
+    width: 1100px;
+    position: relative;
+    margin: 0 auto;
+}
+.slick-slide img{
+    width:100%;
+    height: auto;
+}
+#prev:hover{
+    background-position:0px -621px;
+}
+#next:hover{
+    background-position:0px -675px;
+}
+.dot{
+    position: absolute;
+  bottom: 30px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+    
+   
+}
+.dot li{
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+    
+   
+}
+.dot li button{
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+
+}
+.dot li button:hover,
+.dotli button:focus {
+  outline: none;
+}
+
+.dot li button:hover:before,
+.dot li button:focus:before {
+  opacity: 1;
+}
+
+.dot li button:before {
+  font-family: 'slick';
+  font-size: 6px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: url('https://upload.wikimedia.org/wikipedia/commons/b/b7/Rule_Segment_-_Circle_open_-_20px.svg');
+  text-align: center;
+  opacity: .25;
+  color: black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+   
+}
+
+.dot li.slick-active button:before {
+  opacity: .75;
+  color: black;
+}
+#dot:hover{
+    background: rgba(237, 167, 35,0.5);
+}
+.dotActive{
+      background: rgba(237, 167, 35,0.5) !important;
+}
+#slide{
+    display: none;
+}
+.shortViewContainer{
+    width:100%;
+    float: left;
+    margin-bottom: 50px;
+    margin-top:50px;
+}
+#shortView{
+    position: relative;
+    max-width: 1200px;
+    min-height: 100px;
+    background: white;
+    text-align: center;
+    margin: 0 auto;
+    
+    
+}
+#shortView div{
+    margin: 0 auto;
+   
+}
+#shortView .text{
+    font-family: 'Playfair Display', serif;
+    margin: 0 auto;
+    height: 100%;
+    
+    
+     
+}
+#Restaraunt{
+    margin-bottom: 100px;
+}
+.text .name{
+    font-size:50px;
+    line-height: 50px;
+}
+.text .restTitle{
+    font-size:80px;
+    line-height: 80px;
+}
+
+#shortView .separator{
+
+    width:50px;
+    height:250px;
+    margin: 0 auto;
+    filter: grayscale(1);
+    background-image:url('../img/icon/separatorForShortView.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#menuContainer{
+/*    float:left;*/
+    position: relative;
+    min-height: 100px;
+    width:100%;
+    background-color: #F6ECE5 !important;
+/*    background: #ce651b !important;*/
+    overflow: hidden;
+   
+}
+#menuBackground{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    
+/*    background-color: #F6ECE5 !important;*/
+    
+}
+#menuBackground .fish{
+    
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    height: auto;
+    z-index: 0;
+    margin-bottom:100px;
+/*    overflow: hidden;*/
+    
+}
+#menuInside{
+    position: relative;
+    z-index: 1;
+/*    overflow: hidden;*/
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 70px;
+}
+#menuInside .grid{
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-template-areas:"menuOfTheSea menuOfTheSea menuOfTheSea" 
+                       "rawFish theEntrees theEntrees"
+                        "theDishes theDishes grilledFish"
+                          "theDishes theDishes Deserts"
+}
+.menu{
+    min-height: 100px;
+    background: white;
+    text-align: center;
+    padding:20px;
+    transition: 0.7s;
+}
+#menuInside h3{
+    font-family:'Playfair Display', serif;
+    font-size:30px;
+}
+#menuInside .price{
+    font-family:'Playfair Display', serif;
+    font-size:30px;
+    margin-bottom: 10px;
+    display: block;
+}
+#menuInside h5{
+    font-family:'Playfair Display', serif;
+    font-size:13px;
+}
+#menuOftheSea{
+    font-family:'Playfair Display', serif;
+    font-size:14px;
+    letter-spacing: 0.5;
+}
+#menuInside .menu.menuOfTheSea{
+    grid-area:menuOfTheSea;
+}
+ #menuInside .menu.theEntrees{
+    grid-area:theEntrees;
+}
+#menuInside  .menu.rawFish{
+    grid-area:rawFish;
+}
+#menuInside  .menu.theDishes{
+    grid-area:theDishes;
+}
+#menuInside  .menu.grilledFish{
+    grid-area:grilledFish;
+}
+#menuInside  .menu.Deserts{
+    grid-area:Deserts;
+}
+
+#seaMenu{
+    width:100%;
+    margin: 0 auto;
+    background: black;
+    min-height: 10px;
+}
+#title{
+   margin-top:20px;
+    text-align: center;
+    font-family:'Playfair Display', serif;
+    font-size:40px;
+    
+}
+#iconLeft{
+    
+    display: inline-block;
+    background-image:url('../img/icon/x1-sprite.png');
+    background-position: 0px -357px;
+    width:10px;
+    height: 24px;
+    
+}
+#titleName{
+    display: inline-block;
+    padding: 20px;
+    color:black;
+}
+#iconRight{
+    display: inline-block;
+    background-image:url('../img/icon/x1-sprite.png');
+    background-position: 0px -383px;
+   
+    width:10px;
+    height: 24px;
+}
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+
+.headerOnScrool{
+    height: 70px !important;
+    
+}
+.fakeHeaderOnScroll{
+    height: 70px !important;
+    
+}
+.logoOnScrool{
+    margin:0 !important;
+/*    transition: 1s;*/
+}
+.menuOnScrool{
+    margin-top:24px !important;
+    margin-right:240px !important;
+/*    transition: 1s;*/
+}
+#menu a:hover{
+    text-decoration: none;
+}
+#bottomSliderContainer{
+    margin-top:30px;
+    width: 100%;
+    position: relative;
+    min-height: 50px;
+}
+#bottomSlider{
+    width:1100px;
+    margin: 0 auto;
+    min-height: 100px;
+}
+.sliderBottom{
+    width:1100px;
+}
+.prev{
+    display: block;
+    position: absolute;
+    top:50%;
+    left:50px;
+    background-image:url('../img/icon/x1-sprite.png');
+    background-position: 0px -567px;
+    width:52px;
+    height: 52px;
+    z-index: 1000;
+}
+.next{
+    display: block;
+    position: absolute;
+    top:50%;
+    right:50px;
+    background-image:url('../img/icon/x1-sprite.png');
+    background-position: 0px -513px;
+    background-size: cover;
+    width:52px;
+    height: 52px;
+    z-index: 1000;
+    
+    
+}
+#slick{
+    width: 1100px;
+    position: relative;
+    margin: 0 auto;
+    min-height: 10px;
+}
+.slick-slide img{
+    width:100%;
+    height: auto;
+}
+.prev:hover{
+    background-position:0px -621px;
+}
+.next:hover{
+    background-position:0px -675px;
+}
+#Contact{
+     position: relative;
+}
+#contact{
+    position: absolute;
+    left:15%;
+    top:30%;
+    background: white;
+    width:auto;
+    padding: 30px;
+}
+#contact p{
+   text-align: left;
+    padding-left: 10px;
+    margin-bottom: 0;
+    font-family:'Playfair Display', serif;
+    font-size:16px;
+}
+#contact p:nth-child(1){
+   text-align: left;
+    padding: 10px;
+/*    margin-bottom: 10px;*/
+    font-size:33px;
+}
+#contact p:nth-child(2){
+   text-align: left;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size:18px;
+}
+#contact p:last-child{
+   text-align: left;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+}
+
+
+#footer{
+    width: 100%;
+    bottom:0;
+    float:right;
+    border-top:1px solid rgba(0,0,0,0.3);
+}
+#footer #Logo{
+    float:right;
+}
+#footer .LogoName{
+    
+    font-size:20px;
+}
+#slideTop{
+    position:fixed;
+    width:40px;
+    height: 40px;
+    bottom: 40px;
+    right:5%;
+    display: none;
+    border-radius: 50%;
+    background-color:rgba(229, 235, 246, 0.43);
+    border: none;
+    border:0.5px solid rgba(41, 185, 185, 0.35);
+    color:rgba(234, 77, 77, 0.8);
+    outline:none;
+}
+	
+@media screen and (max-width:768px){
+    #header{
+    position: relative;
+    height: 230px;
+    margin-bottom: 0;
+    }
+    #Logo{
+    margin: 0 auto;
+    float: none;
+    text-align: center;
+    font-size: 30px;
+/*    max-height: 10px;*/
+    }
+    #LogoName{
+    font-size: 30px;
+    text-align: center;
+    
+    }
+    #headerContent{
+    margin: 0 auto;
+    }
+    
+    #menu{
+    float: none;
+    margin: 0 auto;
+    position: relative;
+    }
+    #icon img{
+    margin: 0 auto;
+    }
+    
+    #menu ul li{
+    float: none;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    }
+    #sliderContainer{
+    max-height: 350px;
+    }
+    #menuInside .grid{
+        display: block;
+        margin-bottom: 10px;
+        width:75%;
+        margin: 0 auto;
+    }
+    #menuInside .grid .menu{
+        display: block;
+        margin-bottom: 10px;    
+    }
+
+    #shortView .separator{
+    width:250px;
+    height:50px;
+    margin: 0 auto;
+    filter: grayscale(1);
+    background-image:url('../img/icon/separatorForShortViewhorizontal.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+    #sliderButtons{
+        display: none;
+    }
+    #dots{
+        display: none;
+    }
+    .fish{
+        display: none;
+    }
+    #slick{
+        width: 100%;
+    }
+    #bottomSlider{
+        width:100%;
+    }
+     .prev{
+        display: none;
+    }
+     .next{
+        display: none;
+    }
+}
+@media screen and (max-width:850px){
+    #fakeHeader{
+    display: none;
+    }
+    #header{
+    position: relative;
+    height: 230px;
+    margin-bottom: 0;
+    }
+    #Logo{
+    margin: 0 auto;
+    float: none;
+    text-align: center;
+    font-size: 30px;
+/*    max-height: 10px;*/
+    }
+    #LogoName{
+    font-size: 30px;
+    text-align: center;
+    
+    }
+    #headerContent{
+    margin: 0 auto;
+    }
+    
+    #menu{
+    float: none;
+    margin: 0 auto;
+    position: relative;
+    }
+    #icon img{
+    margin: 0 auto;
+    }
+    
+    #menu ul li{
+    float: none;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    }
+    #sliderContainer{
+    max-height: 350px;
+    }
+}
+@media screen and (min-width:851px) and (max-width:1100px) {
+    #fakeHeader{
+    height: 70px;
+    }
+    #header{
+    position: fixed;
+    height: 70px;
+    
+    }
+    #header #menu{
+    margin: 0;
+    float:right;
+    margin-right: 50px;
+    margin-top:10px;
+    }
+    #header #Logo{
+        margin: 0;
+    }
+    #header #Logo p{
+        font-size: 29px;
+    }
+    .headerOnScrool{
+    height: 70px;
+    transition: 0.5s;
+}
+    .fakeHeaderOnScrool{
+        height: 70px;
+    }
+    .logoOnScrool{
+    margin:0 !important;
+    transition: 0.5s;
+}
+    .menuOnScrool{
+    margin-top: 10px !important;
+    margin-right:50px !important;
+    transition: 0.5s;
+}
+     #slick{
+        width: 100%;
+    }
+    #bottomSlider{
+        width:100%;
+    }
+    }
+
+
+    
